@@ -1,0 +1,41 @@
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  name: {{app}}
+  namespace: {{namespace}}
+  labels:
+    team: {{team}}
+    app: {{app}}
+spec:
+  image: {{image}}
+  port: 7200
+  liveness:
+    path: {{base_path}}/isAlive
+    timeout: 1
+    periodSeconds: 5
+    failureThreshold: 10
+  readiness:
+    path: {{base_path}}/isReady
+    timeout: 1
+  prometheus:
+    enabled: false
+  replicas:
+    min: 2
+    max: 4
+    cpuThresholdPercentage: 75
+  resources:
+    limits:
+      cpu: 500m
+      memory: 1024Mi
+    requests:
+      cpu: 300m
+      memory: 512Mi
+  ingresses:
+  {{#each ingresses as |ingress|}}
+    - {{ingress}}
+  {{/each}}
+  sessionAffinity: ClientIP # Sticky Session for ingress controller to prevent 404 on rollout
+  accessPolicy:
+    outbound:
+      external:
+        - host: api.amplitude.com
