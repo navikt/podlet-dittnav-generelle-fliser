@@ -1,6 +1,6 @@
-app: podlet-template
-namespace: paw
-team: paw
-base_path: "/arbeid/podlet-template"
+app: podlet-dittnav-generelle-fliser
+namespace: personbruker
+team: personbruker
+base_path: "/person/podlet-dittnav-generelle-fliser"
 ingresses:
-    - https://arbeid.dev.nav.no/arbeid/podlet-template
+    - https://person.dev.nav.no/person/podlet-dittnav-generelle-fliser

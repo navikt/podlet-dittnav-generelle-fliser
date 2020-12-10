@@ -1,9 +1,9 @@
-# podlet-template
+# podlet-dittnav-generelle-fliser
 
-Podlet-template
+podlet-dittnav-generelle-fliser
 
 Man bør gjøre følgende ved å bruke dette templatet:
-1. Bytte ut `podlet-template` med ditt podletnavn overalt
+1. Bytte ut `podlet-dittnav-generelle-fliser` med ditt podletnavn overalt
 2. Sette riktig `basepath` følgende steder:
     - **.github/workflows/deploy.yml**
     - `podlet.js`

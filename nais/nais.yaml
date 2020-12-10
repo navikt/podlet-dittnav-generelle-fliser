@@ -8,7 +8,7 @@ metadata:
     app: {{app}}
 spec:
   image: {{image}}
-  port: 7200
+  port: 7400
   liveness:
     path: {{base_path}}/isAlive
     timeout: 1

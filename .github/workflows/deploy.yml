@@ -6,11 +6,11 @@ on:
       - main
 
 env:
-  IMAGE: docker.pkg.github.com/${{ github.repository }}/podlet-template:${{ github.sha }}
-  LATEST_IMAGE: docker.pkg.github.com/${{ github.repository }}/podlet-template:latest
-  BASE_PATH: /arbeid/podlet-template
-  IMAGE_CACHE_RUNTIME: docker.pkg.github.com/${{ github.repository }}/podlet-template-build-cache-runtime
-  IMAGE_CACHE_BUILDER: docker.pkg.github.com/${{ github.repository }}/podlet-template-build-cache-builder
+  IMAGE: docker.pkg.github.com/${{ github.repository }}/podlet-dittnav-generelle-fliser:${{ github.sha }}
+  LATEST_IMAGE: docker.pkg.github.com/${{ github.repository }}/podlet-dittnav-generelle-fliser:latest
+  BASE_PATH: /person/podlet-dittnav-generelle-fliser
+  IMAGE_CACHE_RUNTIME: docker.pkg.github.com/${{ github.repository }}/podlet-dittnav-generelle-fliser-build-cache-runtime
+  IMAGE_CACHE_BUILDER: docker.pkg.github.com/${{ github.repository }}/podlet-dittnav-generelle-fliser-build-cache-builder
 
 jobs:
   test:

@@ -1,5 +1,5 @@
 {
-  "name": "podlet-template",
+  "name": "podlet-dittnav-generelle-fliser",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -10,7 +10,11 @@
     "express": "4.17.1",
     "less": "3.12.2",
     "msw": "0.24.1",
+    "nav-frontend-chevron": "^1.0.21",
+    "nav-frontend-chevron-style": "^0.3.10",
     "nav-frontend-core": "5.0.10",
+    "nav-frontend-lenkepanel": "^1.0.61",
+    "nav-frontend-lenkepanel-style": "^0.3.42",
     "nav-frontend-lenker": "1.0.53",
     "nav-frontend-lenker-style": "0.2.39",
     "nav-frontend-paneler": "2.0.22",
