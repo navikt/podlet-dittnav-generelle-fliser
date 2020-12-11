@@ -7,8 +7,8 @@ function getEnvironment(): string {
 }
 
 const OPPFOLGING_URL: any = {
-  development: "https://www.dev.nav.no/person/dittnav-api/oppfolging",
-  production: "https://www.nav.no/person/dittnav-api/oppfolging",
+  development: "https://www.nav.no/person/dittnav-api/oppfolging",
+  production: "https://www.dev.nav.no/person/dittnav-api/oppfolging",
 };
 
 export const oppfolgingUrl = OPPFOLGING_URL[getEnvironment()];
