@@ -11,8 +11,8 @@ const fetcher = async (url: string) => {
 };
 
 function App() {
-  const { data: underOppfolging } = useSWR(oppfolgingUrl, fetcher);
-  return (!underOppfolging
+  const { data: erBrukerUnderOppfolging } = useSWR(oppfolgingUrl, fetcher);
+  return (!erBrukerUnderOppfolging
       ?
       <div className="podlet-dittnav-generelle-fliser">
         <div className="container">
