@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./App.css";
 import GenerelleFliser from "./dittnav/generelle-fliser";
 import { oppfolgingUrl } from "./url";
@@ -11,14 +11,22 @@ const fetcher = async (url: string) => {
 };
 
 function App() {
-
   const { data: underOppfolging } = useSWR(oppfolgingUrl, fetcher);
-
   return (!underOppfolging
-      ? <div className="podlet-dittnav-generelle-fliser">
-        <GenerelleFliser />
+      ?
+      <div className="podlet-dittnav-generelle-fliser">
+        <div className="container">
+          <div className="row">
+            <div className="maincontent side-innhold">
+              <div className="col-md-12" id="dittnav-main-container">
+                <GenerelleFliser />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      : null
+      :
+      null
   );
 }
 
