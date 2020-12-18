@@ -1,6 +1,6 @@
 import get from "./msw-utils";
-import navn from "./person-navn.json";
+import oppfolging from "./oppfolging.json";
 
 export const handlers = [
-  get("https://api.nav.no/dittnav-api/personalia/navn", navn),
+  get("https://www.dev.nav.no/person/dittnav-api/oppfolging", oppfolging),
 ];
