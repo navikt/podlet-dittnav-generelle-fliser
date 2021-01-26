@@ -10,7 +10,7 @@
     "craco-less": "1.17.1",
     "express": "4.17.1",
     "less": "3.13.1",
-    "msw": "0.24.4",
+    "msw": "0.25.0",
     "nav-frontend-chevron": "1.0.24",
     "nav-frontend-chevron-style": "1.0.1",
     "nav-frontend-core": "5.0.10",
