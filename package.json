@@ -49,7 +49,8 @@
     "test-ci": "CI=true craco test",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i",
     "typeCheck": "tsc",
-    "podlet": "node podlet.js"
+    "podlet": "node podlet.js",
+    "bump": "npx npm-check-updates --target minor -u && npm i"
   },
   "eslintConfig": {
     "extends": [
