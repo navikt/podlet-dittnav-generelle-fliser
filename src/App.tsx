@@ -12,22 +12,13 @@ const fetcher = async (url: string) => {
 
 function App() {
   const { data } = useSWR(oppfolgingUrl, fetcher);
-  return ( data && !data.erBrukerUnderOppfolging
-      ?
-      <div className="podlet-dittnav-generelle-fliser">
-        <div className="container">
-          <div className="row">
-            <div className="maincontent side-innhold">
-              <div className="col-md-12" id="dittnav-main-container">
-                <GenerelleFliser />
-              </div>
-            </div>
-          </div>
-        </div>
+  return data && !data.erBrukerUnderOppfolging ? (
+    <div className="podlet-dittnav-generelle-fliser">
+      <div className="col-md-12" id="dittnav-main-container">
+        <GenerelleFliser />
       </div>
-      :
-      null
-  );
+    </div>
+  ) : null;
 }
 
 export default App;
