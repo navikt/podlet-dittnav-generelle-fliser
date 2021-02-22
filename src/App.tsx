@@ -14,9 +14,7 @@ function App() {
   const { data } = useSWR(oppfolgingUrl, fetcher);
   return data && !data.erBrukerUnderOppfolging ? (
     <div className="podlet-dittnav-generelle-fliser">
-      <div className="col-md-12" id="dittnav-main-container">
-        <GenerelleFliser />
-      </div>
+      <GenerelleFliser />
     </div>
   ) : null;
 }
