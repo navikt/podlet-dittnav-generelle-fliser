@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import GenerelleFliser from "./dittnav/generelle-fliser";
 import { oppfolgingUrl } from "./url";
 import useSWR from "swr";
