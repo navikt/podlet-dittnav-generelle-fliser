@@ -25,7 +25,6 @@
     "prop-types": "15.7.2",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "source-map-explorer": "2.5.2",
     "swr": "0.4.2"
   },
   "devDependencies": {
@@ -46,7 +45,6 @@
   "scripts": {
     "start": "NODE_ENV=development craco start",
     "build": "craco build",
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "test": "craco test",
     "test-ci": "CI=true craco test",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i",
