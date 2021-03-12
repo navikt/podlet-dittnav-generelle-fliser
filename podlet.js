@@ -28,7 +28,7 @@ assets.entrypoints.forEach((element, index) => {
   if (element.indexOf(".css") !== -1) {
     podlet.css({ value: `/${element}` });
   } else if (element.indexOf(".js") !== -1) {
-    podlet.js({ value: `/${element}`, defer: true, type: "module" });
+    podlet.js({ value: `/${element}`, defer: true });
   }
 });
 
