@@ -12,7 +12,7 @@ const fetcher = async (url) => {
 function App() {
   const { data, error } = useSWR(oppfolgingUrl, fetcher);
 
-  return data?.erBrukerUnderOppfolging || error ? (
+  return !data?.erBrukerUnderOppfolging || error ? (
     <div className="podlet-dittnav-generelle-fliser">
       <GenerelleFliser />
     </div>
