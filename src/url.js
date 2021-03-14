@@ -1,4 +1,4 @@
-function getEnvironment(): string {
+function getEnvironment() {
   let environment = "development";
   if (process.env.NODE_ENV === "production") {
     environment = "production";
@@ -6,7 +6,7 @@ function getEnvironment(): string {
   return environment;
 }
 
-const OPPFOLGING_URL: any = {
+const OPPFOLGING_URL = {
   development: "https://www.nav.no/person/dittnav-api/oppfolging",
   production: "https://www.dev.nav.no/person/dittnav-api/oppfolging",
 };
