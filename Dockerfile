@@ -30,7 +30,7 @@ COPY . /usr/src/app
 EXPOSE 7400
 USER node
 
-COPY --from=builder /usr/src/app/build /usr/src/app/build
+COPY --from=builder /usr/src/app/dist /usr/src/app/dist
 
 CMD ["npm", "run", "podlet"]
 
