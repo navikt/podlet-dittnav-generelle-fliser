@@ -16,8 +16,8 @@ export default {
       maps: [
         {
           imports: {
-            react: "https://cdn.skypack.dev/react",
-            "react-dom": "https://cdn.skypack.dev/react-dom",
+            react: "https://neik.dev.intern.nav.no/npm/@pika/react/v16/package/source.production.js",
+            "react-dom": "https://neik.dev.intern.nav.no/npm/@pika/react-dom/v16/package/source.production.js",
           },
         },
       ],
