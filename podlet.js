@@ -1,6 +1,5 @@
 const express = require("express");
 const Podlet = require("@podium/podlet");
-const fs = require("fs");
 
 const promClient = require("prom-client");
 const PrometheusConsumer = require("@metrics/prometheus-consumer");
@@ -12,9 +11,6 @@ const isDevelopmentEnv = true;
 
 const podletName = "podlet-dittnav-generelle-fliser";
 
-let rawdata = fs.readFileSync("build/asset-manifest.json");
-let assets = JSON.parse(rawdata);
-
 const podlet = new Podlet({
   name: podletName,
   version: podletVersion,
@@ -24,20 +20,21 @@ const podlet = new Podlet({
   logger: console,
 });
 
-assets.entrypoints.forEach((element, index) => {
-  if (element.indexOf(".css") !== -1) {
-    podlet.css({ value: `/${element}` });
-  } else if (element.indexOf(".js") !== -1) {
-    podlet.js({ value: `/${element}`, defer: true });
-  }
+podlet.css({
+  value: "/dist/generelle-fliser.css",
+});
+
+podlet.js({
+  value: "/dist/generelle-fliser.esm.js",
+  type: "module",
+  defer: true,
 });
 
 const app = express();
 app.use(podlet.middleware());
-app.use("/static", express.static("./build/static"));
-app.use("/assets", express.static("./build/"));
-app.use(`${basePath}/static`, express.static("./build/static"));
-app.use(`${basePath}/assets`, express.static("./build/"));
+
+app.use("/dist", express.static("./dist"));
+app.use(`${basePath}/dist`, express.static("./dist"));
 
 app.get(`${basePath}${podlet.content()}`, (req, res) => {
   res.status(200).podiumSend(`<div id="${podletName}"></div>`);
@@ -67,7 +64,6 @@ app.get("/metrics", async function (req, res) {
 });
 
 //start the app at port
-
 console.log(JSON.stringify(podlet, undefined, 2));
 console.log(`Content path ${podlet.content()}`);
 console.log(`Manifest path ${podlet.manifest()}`);

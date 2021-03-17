@@ -1,5 +1,5 @@
 import React from "react";
-import {Sidetittel} from "nav-frontend-typografi";
+import { Sidetittel } from "nav-frontend-typografi";
 
 interface Props {
   navn?: string;

@@ -1,17 +1,18 @@
 import React from "react";
-import GenerelleFliser from "./dittnav/generelle-fliser";
 import { oppfolgingUrl } from "./url";
 import useSWR from "swr";
+import GenerelleFliser from "./components/GenerelleFliser";
 
-const fetcher = async (url: string) => {
+const fetcher = async (url) => {
   const response = await fetch(url, { method: "GET", credentials: "include" });
   const data = await response.json();
   return data;
 };
 
 function App() {
-  const { data } = useSWR(oppfolgingUrl, fetcher);
-  return data && !data.erBrukerUnderOppfolging ? (
+  const { data, error } = useSWR(oppfolgingUrl, fetcher);
+
+  return !data?.erBrukerUnderOppfolging || error ? (
     <div className="podlet-dittnav-generelle-fliser">
       <GenerelleFliser />
     </div>
