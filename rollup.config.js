@@ -17,7 +17,7 @@ export default {
         {
           imports: {
             react: "https://neik.dev.intern.nav.no/npm/@pika/react/v16/package/source.production.js",
-            "react-dom": "https://neik.dev.intern.nav.no/npm/@pika/react-dom/v16/package/source.production.js",
+            "react-dom": "https://neik.dev.intern.nav.no/npm/@pika/react-dom/v16/source.bundle.production.js",
           },
         },
       ],
