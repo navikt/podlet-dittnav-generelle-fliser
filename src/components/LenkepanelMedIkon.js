@@ -26,8 +26,8 @@ LenkepanelMedIkon.propTypes = {
   href: string.isRequired,
   onClick: func,
   className: string,
-  overskrift: shape({ root: any }).isRequired,
-  ingress: shape({ root: any }),
+  overskrift: string,
+  ingress: string,
   etikett: string,
   children: node.isRequired,
 };
