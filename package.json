@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@craco/craco": "6.1.1",
     "@metrics/prometheus-consumer": "3.0.1",
     "@podium/podlet": "4.4.14",
     "classnames": "2.2.6",
-    "craco-less": "1.17.1",
     "express": "4.17.1",
     "less": "4.1.1",
     "nav-frontend-chevron": "1.0.28",
@@ -52,11 +50,10 @@
     "rollup-plugin-terser": "7.0.2"
   },
   "scripts": {
-    "start": "NODE_ENV=development craco start",
-    "build": "craco build",
+    "start": "rollup -c rollup.config.dev.js -w",
     "build:esm": "rollup -c rollup.config.js",
-    "test": "craco test",
-    "test-ci": "CI=true craco test",
+    "test": "react-scripts test",
+    "test-ci": "CI=true react-scripts test",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i",
     "podlet": "node podlet.js",
     "bump": "npx npm-check-updates --target minor -u && npm i"
