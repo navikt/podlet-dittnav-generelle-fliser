@@ -5,7 +5,7 @@ import { Normaltekst, Undertekst, Undertittel } from "nav-frontend-typografi";
 
 class LenkepanelMedIkon extends React.Component {
   render() {
-    const { href, className, overskrift, ingress, etikett, children } = this.props;
+    const { href, className, overskrift, ingress, children } = this.props;
 
     return (
       <LenkepanelBase className={className} href={href} border>
@@ -14,7 +14,6 @@ class LenkepanelMedIkon extends React.Component {
           <div>
             <Undertittel>{overskrift}</Undertittel>
             {ingress ? <Normaltekst>{ingress}</Normaltekst> : ""}
-            {etikett ? <Undertekst className="lenkepanel__etikett">{etikett}</Undertekst> : ""}
           </div>
         </div>
       </LenkepanelBase>
@@ -28,7 +27,6 @@ LenkepanelMedIkon.propTypes = {
   className: string,
   overskrift: string,
   ingress: string,
-  etikett: string,
   children: node.isRequired,
 };
 
@@ -36,7 +34,6 @@ LenkepanelMedIkon.defaultProps = {
   onClick: null,
   className: "",
   ingress: null,
-  etikett: null,
 };
 
 export default LenkepanelMedIkon;
