@@ -21,11 +21,11 @@ const podlet = new Podlet({
 });
 
 podlet.css({
-  value: "/dist/generelle-fliser.css",
+  value: "/dist/bundle.css",
 });
 
 podlet.js({
-  value: "/dist/generelle-fliser.esm.js",
+  value: "/dist/bundle.esm.js",
   type: "module",
   defer: true,
 });
