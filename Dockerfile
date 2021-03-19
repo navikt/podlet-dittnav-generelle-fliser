@@ -10,7 +10,7 @@ RUN npm ci
 
 COPY . /usr/src/app
 ENV NODE_ENV=production
-RUN npm run build:esm
+RUN npm run build
 
 FROM node:14-alpine AS runtime
 

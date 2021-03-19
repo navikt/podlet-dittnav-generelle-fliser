@@ -36,7 +36,7 @@ export default {
     }),
     json(),
     postcss({
-      extract: path.resolve("dist/generelle-fliser.css"),
+      extract: path.resolve("dist/bundle.css"),
       loaders: [
         postcssLessLoader({
           nodeModulePath: "./node_modules",
@@ -47,7 +47,7 @@ export default {
   ],
   output: [
     {
-      file: "dist/generelle-fliser.esm.js",
+      file: "dist/bundle.esm.js",
       format: "esm",
       plugins: [terser()],
     },

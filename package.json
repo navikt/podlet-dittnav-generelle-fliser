@@ -51,7 +51,7 @@
   },
   "scripts": {
     "start": "rollup -c rollup.config.dev.js -w",
-    "build:esm": "rollup -c rollup.config.js",
+    "build": "rollup -c rollup.config.prod.js",
     "test": "react-scripts test",
     "test-ci": "CI=true react-scripts test",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i",

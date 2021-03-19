@@ -21,7 +21,7 @@ export default {
       presets: ["@babel/preset-react"],
     }),
     commonjs({
-      include: ["node_modules/**", "src/*"],
+      include: ["node_modules/**"],
     }),
     json(),
     postcss({
@@ -44,7 +44,7 @@ export default {
     livereload({ watch: "dist" }),
   ],
   output: {
-    file: "dist/generelle-fliser.dev.esm.js",
+    file: "dist/bundle.dev.esm.js",
     format: "esm",
     sourcemap: true,
   },
