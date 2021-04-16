@@ -1,16 +1,11 @@
 import React from "react";
+import { useQuery } from "react-query";
 import { oppfolgingUrl } from "./url";
-import useSWR from "swr";
 import GenerelleFliser from "./components/GenerelleFliser";
-
-const fetcher = async (url) => {
-  const response = await fetch(url, { method: "GET", credentials: "include" });
-  const data = await response.json();
-  return data;
-};
+import { fetcher } from "./api";
 
 function App() {
-  const { data, error } = useSWR(oppfolgingUrl, fetcher);
+  const { data, error } = useQuery(oppfolgingUrl, fetcher);
 
   return !data?.erBrukerUnderOppfolging || error ? (
     <div className="podlet-dittnav-generelle-fliser">

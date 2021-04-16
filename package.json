@@ -21,7 +21,7 @@
     "nav-frontend-typografi-style": "1.0.35",
     "prom-client": "13.1.0",
     "prop-types": "15.7.2",
-    "swr": "0.5.4"
+    "react-query": "3.13.9"
   },
   "devDependencies": {
     "@eik/rollup-plugin": "4.0.2",
