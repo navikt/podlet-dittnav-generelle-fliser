@@ -1,0 +1,7 @@
+{
+  "app": "podlet-dittnav-generelle-fliser",
+  "namespace": "personbruker",
+  "team": "personbruker",
+  "base_path": "/person/podlet-dittnav-generelle-fliser",
+  "ingresses": ["https://person.intern.nav.no/person/podlet-dittnav-generelle-fliser"]
+}
