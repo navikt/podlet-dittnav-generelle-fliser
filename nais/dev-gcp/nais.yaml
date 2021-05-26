@@ -1,0 +1,40 @@
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  name: podlet-dittnav-generelle-fliser
+  namespace: personbruker
+  labels:
+    team: personbruker
+    app: podlet-dittnav-generelle-fliser
+spec:
+  image: {{image}}
+  port: 7400
+  liveness:
+    path: /person/podlet-dittnav-generelle-fliser/isAlive
+    timeout: 1
+    periodSeconds: 5
+    failureThreshold: 10
+  readiness:
+    path: /person/podlet-dittnav-generelle-fliser/isReady
+    timeout: 1
+  prometheus:
+    enabled: true
+    path: /metrics
+  replicas:
+    min: 2
+    max: 4
+    cpuThresholdPercentage: 75
+  resources:
+    limits:
+      cpu: 500m
+      memory: 1024Mi
+    requests:
+      cpu: 300m
+      memory: 512Mi
+  ingresses:
+    - "https://person.dev.nav.no/person/podlet-dittnav-generelle-fliser"
+  sessionAffinity: ClientIP # Sticky Session for ingress controller to prevent 404 on rollout
+  accessPolicy:
+    outbound:
+      external:
+        - host: api.amplitude.com
